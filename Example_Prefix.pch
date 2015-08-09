@@ -1,0 +1,16 @@
+//
+// Prefix header for all source files of the 'Example' target in the 'Example' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+    #import <UIKit/UIKit.h>
+#endif
+
+#define RGB(r, g, b)		[UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1]
+
+#ifdef DEBUG
+#define Log(format, ...) NSLog(@"%s %@ : %d", __PRETTY_FUNCTION__,[NSString stringWithFormat:format, ## __VA_ARGS__], __LINE__);
+#else
+#define Log( s, ... )
+#endif
